@@ -1,6 +1,6 @@
 #pragma once 
-
-void h_w();
+//Personal function to make displaying vectors easier 
+void loop(std::vector<int> a);
 
 //Below is the function for task A
 
@@ -10,7 +10,7 @@ std::vector<int> makeVector(int n);
 std::vector<int> goodVibes(const  std::vector<int> &v);
 
 //Below is the function for task C
-// void gogeta(vector<int> &goku, vector<int> &vegeta);
+void gogeta(std::vector<int> &goku, std::vector<int> &vegeta);
 
 //Below is the function for task D
-// vector<int> sumPairWise(const vector<int> &v1, const vector<int> &v2);
+std::vector<int> sumPairWise(const std::vector<int> &v1, const std::vector<int> &v2);
