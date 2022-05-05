@@ -13,4 +13,28 @@ int main()
     {
         std::cout << ex1[i] << std::endl;
     }
+
+    std::cout << "=========================================================Task B=========================================================" << std::endl;  
+    std::vector<int> example = {-4,4,-3,3,-2,2,-1,1,0};
+    std::cout << "The integers that are in the vector named example are: ";
+    for(int i = 0; i != example.size(); i++)
+    {
+        std::cout << example[i] << ", ";
+        if (i == example.size()-1)
+        {
+            std::cout << "\n";
+        }
+    }
+    example = goodVibes(example);
+    std::cout << "The function has been used on the example vector and should now only reutrn the positve values of the vector!" << std::endl;
+    for(int i = 0; i != example.size(); i++)
+    {
+        std::cout << example[i] << ", ";
+        if (i == example.size()-1)
+        {
+            std::cout << "\n";
+        }
+    }
+
+
 }

@@ -7,7 +7,7 @@ void h_w();
 std::vector<int> makeVector(int n);
 
 //Below is the function for task B
-// vector<int> goodVibes(const & vector<int> v);
+std::vector<int> goodVibes(const  std::vector<int> &v);
 
 //Below is the function for task C
 // void gogeta(vector<int> &goku, vector<int> &vegeta);
