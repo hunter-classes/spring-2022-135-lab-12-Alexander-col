@@ -62,8 +62,47 @@ void gogeta(std::vector<int> &goku, std::vector<int> &vegeta)
 std::vector<int> sumPairWise(const std::vector<int> &v1, const std::vector<int> &v2)
 {
     int diff;
-
     std::vector<int> output;
+
+    if(v1.size() > v2.size())
+    {
+        std::vector<int> filler;
+
+        filler = v2;
+        diff = v1.size() - v2.size();
+        
+        for (int i = 0; i != diff; i++)
+        {
+            filler.push_back(0);
+        }
+        for(int i = 0; i != v1.size(); i++)
+        {
+            output.push_back(v1[i] + filler[i]);
+        }
+        return output;
+    }
+    
+    if(v1.size() < v2.size())
+    {
+        std::vector<int> filler;
+
+        filler = v1;
+        diff = v2.size() - v1.size();
+        
+        for (int i = 0; i != diff; i++)
+        {
+            filler.push_back(0);
+        }
+        for(int i = 0; i != v2.size(); i++)
+        {
+            output.push_back(v2[i] + filler[i]);
+        }
+        return output;
+    }
+
+
+
+
     if(v1.size() == v2.size())
     {
         for(int i = 0; i != v1.size(); i++)
@@ -71,34 +110,6 @@ std::vector<int> sumPairWise(const std::vector<int> &v1, const std::vector<int> 
             output.push_back(v1[i] + v2[i]);
         }
     }
-    else if(v1.size() > v2.size())
-    {
-        diff = (v1.size() - v2.size());
-        for(int i = 0; i != diff; i++)
-        {
-            output.push_back(0);
-        }
-        for(int j = 0; j != v1.size(); j++)
-        {
-            output.push_back(v1[j] + v2[j]);
-        }        
-
-    }
-    else if(v1.size() < v2.size())
-    {
-        diff = v2.size() - v1.size();
-        for(int i = 0; i != diff; i++)
-        {
-            output.push_back(0);
-        }        
-        for(int j = 0; j != v1.size(); j++)
-        {
-            output.push_back(v1[j] + v2[j]);
-        }
-
-    }
-
-
-
+    
     return output;
 }
