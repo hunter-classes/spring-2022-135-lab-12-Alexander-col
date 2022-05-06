@@ -5,7 +5,14 @@ void loop(std::vector<int> a)
 {
     for(int i = 0; i != a.size(); i++)
     {
-        std::cout << a[i] << ", ";
+        if(a.at(i) == a.back())
+        {
+            std::cout << a[i];
+        }
+        else
+        {
+            std::cout << a[i] << ", ";
+        }
     }
     std::cout << "\n";
 }
@@ -33,9 +40,9 @@ std::vector<int> goodVibes(const std::vector<int> &v)
 
     for(int i = 0; i != v.size(); i++)
     {
-        if(v[i] > 0)
+        if(v.at(i) > 0)
         {
-            output.push_back(v[i]);
+            output.push_back(v.at(i));
         }
 
 
@@ -46,12 +53,14 @@ std::vector<int> goodVibes(const std::vector<int> &v)
 
 
 //  that appends elements of the second vector into the first and empties the second vector.
-void gogeta(std::vector<int> &goku, std::vector<int> &vegeta)
+void gogeta(std::vector<int> &goku, std::vector<int> &vegeta) 
 {
-    int size = vegeta.size();
-    for(int i = 0; i != size; i++)
-    {
-        goku.push_back(vegeta.at(i));
+    const int size = vegeta.size();
+
+    for(int i = 0; i < size; i++) 
+    { 
+        goku.push_back(vegeta.at(0));
+        vegeta.erase(vegeta.begin());
     }
 }
 
