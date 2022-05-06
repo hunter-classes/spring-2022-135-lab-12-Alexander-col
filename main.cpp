@@ -44,10 +44,18 @@ int main()
     std::cout << "=================================Task D=================================" << std::endl;  
     std::vector<int> pair1 = {2,1,6,5};
     std::vector<int> pair2 = {6,8,3,5};
+    std::cout << "The ints in vector pair 1 are: ";
+    loop(pair1);
+    std::cout << "The ints in vector pair 2 are: ";
+    loop(pair2);
+    std::cout << "Once they are put with their pairwise function we have: ";
     std::vector<int> outcome = sumPairWise(pair1, pair2);
     loop(outcome);
 
 }
+
+
+
 
 void loop(std::vector<int> a)
 {

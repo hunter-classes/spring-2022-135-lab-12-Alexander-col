@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include "funcs.h"
+
 
 
 //  that returns a vector of n integers that range from 0 to n-1. 
@@ -9,7 +11,7 @@
 std::vector<int> makeVector(int n)
 {
     std::vector<int> output;
-    for (int i = 0; i !=n; i++)
+    for (int i = 0; i <n; i++)
     {
         output.push_back(i);
     }
@@ -53,57 +55,18 @@ void gogeta(std::vector<int> &goku, std::vector<int> &vegeta)
 //  the pairwise sum of the elements from the two vectors 
 //  passed as arguments. If a vector has a smaller size than the other, 
 //  consider extra entries from the shorter vectors as 0. Example:
-std::vector<int> sumPairWise(const std::vector<int> &v1, const std::vector<int> &v2)
-{
-    int diff;
-    std::vector<int> output;
+std::vector<int> sumPairWise(const std::vector<int> &v1, const std::vector<int> &v2) 
+{ 
+    std::vector<int> sums = v1.size() > v2.size() ? v1 : v2; 
 
-    if(v1.size() > v2.size())
-    {
-        std::vector<int> filler;
+    // gets the smaller size from two vectors
+    const int size = v1.size() > v2.size() ? v2.size() : v1.size();
 
-        filler = v2;
-        diff = v1.size() - v2.size();
-        
-        for (int i = 0; i != diff; i++)
-        {
-            filler.push_back(0);
-        }
-        for(int i = 0; i != v1.size(); i++)
-        {
-            output.push_back(v1[i] + filler[i]);
-        }
-        return output;
-    }
-    
-    if(v1.size() < v2.size())
-    {
-        std::vector<int> filler;
-
-        filler = v1;
-        diff = v2.size() - v1.size();
-        
-        for (int i = 0; i != diff; i++)
-        {
-            filler.push_back(0);
-        }
-        for(int i = 0; i != v2.size(); i++)
-        {
-            output.push_back(v2[i] + filler[i]);
-        }
-        return output;
+    for(int i = 0; i < size; i++) 
+    { 
+        sums[i] = v1.at(i) + v2.at(i);
     }
 
+    return sums;
 
-
-
-    if(v1.size() == v2.size())
-    {
-        for(int i = 0; i != v1.size(); i++)
-        {
-            output.push_back(v1[i] + v2[i]);
-        }
-    }
-    
-    return output;
 }
