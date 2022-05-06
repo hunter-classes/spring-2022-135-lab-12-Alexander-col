@@ -1,6 +1,5 @@
 #pragma once 
-//Personal function to make displaying vectors easier 
-void loop(std::vector<int> a);
+#include <vector>
 
 //Below is the function for task A
 

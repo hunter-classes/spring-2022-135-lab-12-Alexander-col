@@ -1,6 +1,11 @@
 #include <iostream>
 #include <vector>
 #include "funcs.h"
+
+//non lab task function but makes printing vectors easier to displayed 
+//oringally was in funcs.h but ran into conflicts 
+void loop(std::vector<int> a);
+
 int main()
 {
     std::cout << "goodbye world" << std::endl;
@@ -42,10 +47,16 @@ int main()
     std::vector<int> outcome = sumPairWise(pair1, pair2);
     loop(outcome);
 
+}
 
-
-
-
-
-
+void loop(std::vector<int> a)
+{
+    for(int i = 0; i != a.size(); i++){
+        if(a.at(i) == a.back()){
+            std::cout << a[i];
+            }
+        else{std::cout << a[i] << ", ";
+        }
+    }
+    std::cout << "\n";
 }

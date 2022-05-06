@@ -1,21 +1,6 @@
 #include <iostream>
 #include <vector>
 
-void loop(std::vector<int> a)
-{
-    for(int i = 0; i != a.size(); i++)
-    {
-        if(a.at(i) == a.back())
-        {
-            std::cout << a[i];
-        }
-        else
-        {
-            std::cout << a[i] << ", ";
-        }
-    }
-    std::cout << "\n";
-}
 
 //  that returns a vector of n integers that range from 0 to n-1. 
 //  Call your program vectors.cpp. 
